@@ -41,6 +41,9 @@ python app.py
 | login | admin |
 | password | admin123 |
 
+## Оценка Qlty
+[![Code Coverage](https://qlty.sh/gh/sigmachyo322/projects/miniblog/coverage.svg)](https://qlty.sh/gh/sigmachyo322/projects/miniblog)
+
 ## Деплой
 
 🔗 **[https://miniblog-XXXX.onrender.com](https://miniblog-XXXX.onrender.com)** ← замените на свою ссылку после деплоя
