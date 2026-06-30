@@ -1,8 +1,10 @@
 # ✍️ MiniBlog
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/REPLACE_WITH_YOUR_BADGE/maintainability)](https://codeclimate.com/github/YOUR_USERNAME/miniblog/maintainability)
+[![Maintainability](https://qlty.sh/gh/sigmachyo322/projects/miniblog/maintainability.svg)](https://qlty.sh/gh/sigmachyo322/projects/miniblog)
 
 Минималистичный блог на Flask с авторизацией, CRUD-статьями и чистым интерфейсом.
+
+![Демонстрация](/home/sigma/College-coding/miniblog/demo.gif)
 
 ## Стек
 
@@ -41,12 +43,9 @@ python app.py
 | login | admin |
 | password | admin123 |
 
-## Оценка Qlty
-[![Maintainability](https://qlty.sh/gh/sigmachyo322/projects/miniblog/maintainability.svg)](https://qlty.sh/gh/sigmachyo322/projects/miniblog)
-
 ## Деплой
 
-🔗 **[https://miniblog-XXXX.onrender.com](https://miniblog-XXXX.onrender.com)** ← замените на свою ссылку после деплоя
+🔗 https://ztsche.pythonanywhere.com/
 
 ## Лицензия
 
