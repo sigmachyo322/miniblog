@@ -42,7 +42,7 @@ python app.py
 | password | admin123 |
 
 ## Оценка Qlty
-[![Code Coverage](https://qlty.sh/gh/sigmachyo322/projects/miniblog/coverage.svg)](https://qlty.sh/gh/sigmachyo322/projects/miniblog)
+[![Maintainability](https://qlty.sh/gh/sigmachyo322/projects/miniblog/maintainability.svg)](https://qlty.sh/gh/sigmachyo322/projects/miniblog)
 
 ## Деплой
 
