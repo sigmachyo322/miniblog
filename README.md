@@ -4,7 +4,7 @@
 
 Минималистичный блог на Flask с авторизацией, CRUD-статьями и чистым интерфейсом.
 
-![Демонстрация](/home/sigma/College-coding/miniblog/demo.gif)
+![Демонстрация](assets/demo.gif)
 
 ## Стек
 
