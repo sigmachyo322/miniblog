@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}Главная — MiniBlog{% endblock %}
+{% block content %}
+<div class="page-header">
+  <h1>Последние публикации</h1>
+  {% if current_user() %}
+    <a href="{{ url_for('post_create') }}" class="btn btn-primary">+ Написать статью</a>
+  {% endif %}
+</div>
+
+{% if posts %}
+  <div class="posts-grid">
+    {% for post in posts %}
+    <article class="card">
+      <h2><a href="{{ url_for('post_detail', post_id=post.id) }}">{{ post.title }}</a></h2>
+      <p class="meta">
+        <span class="author">{{ post.author.username }}</span>
+        <span class="date">{{ post.created_at.strftime('%d.%m.%Y') }}</span>
+      </p>
+      <p class="excerpt">{{ post.body[:200] }}{% if post.body|length > 200 %}…{% endif %}</p>
+      <a href="{{ url_for('post_detail', post_id=post.id) }}" class="read-more">Читать →</a>
+    </article>
+    {% endfor %}
+  </div>
+{% else %}
+  <p class="empty-state">Статей пока нет. <a href="{{ url_for('post_create') }}">Напишите первую!</a></p>
+{% endif %}
+{% endblock %}

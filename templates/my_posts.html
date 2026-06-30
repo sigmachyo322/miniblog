@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}Мои статьи — MiniBlog{% endblock %}
+{% block content %}
+<div class="page-header">
+  <h1>Мои статьи</h1>
+  <a href="{{ url_for('post_create') }}" class="btn btn-primary">+ Новая статья</a>
+</div>
+{% if posts %}
+  <div class="posts-grid">
+    {% for post in posts %}
+    <article class="card">
+      <h2><a href="{{ url_for('post_detail', post_id=post.id) }}">{{ post.title }}</a></h2>
+      <p class="meta"><span class="date">{{ post.created_at.strftime('%d.%m.%Y') }}</span></p>
+      <p class="excerpt">{{ post.body[:150] }}{% if post.body|length > 150 %}…{% endif %}</p>
+      <div class="card-actions">
+        <a href="{{ url_for('post_edit', post_id=post.id) }}" class="btn btn-outline btn-sm">Редактировать</a>
+        <form method="POST" action="{{ url_for('post_delete', post_id=post.id) }}" style="display:inline"
+              onsubmit="return confirm('Удалить?')">
+          <button type="submit" class="btn btn-danger btn-sm">Удалить</button>
+        </form>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+{% else %}
+  <p class="empty-state">У вас пока нет статей. <a href="{{ url_for('post_create') }}">Напишите первую!</a></p>
+{% endif %}
+{% endblock %}

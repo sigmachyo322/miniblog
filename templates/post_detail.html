@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}{{ post.title }} — MiniBlog{% endblock %}
+{% block content %}
+<article class="post-full">
+  <h1>{{ post.title }}</h1>
+  <p class="meta">
+    <span class="author">{{ post.author.username }}</span>
+    <span class="date">{{ post.created_at.strftime('%d.%m.%Y %H:%M') }}</span>
+    {% if post.updated_at != post.created_at %}
+      <span class="updated">(обновлено {{ post.updated_at.strftime('%d.%m.%Y') }})</span>
+    {% endif %}
+  </p>
+  <div class="post-body">{{ post.body }}</div>
+
+  {% if current_user() and current_user().id == post.user_id %}
+  <div class="post-actions">
+    <a href="{{ url_for('post_edit', post_id=post.id) }}" class="btn btn-outline">Редактировать</a>
+    <form method="POST" action="{{ url_for('post_delete', post_id=post.id) }}" style="display:inline"
+          onsubmit="return confirm('Удалить статью?')">
+      <button type="submit" class="btn btn-danger">Удалить</button>
+    </form>
+  </div>
+  {% endif %}
+</article>
+<a href="{{ url_for('index') }}" class="back-link">← Все статьи</a>
+{% endblock %}

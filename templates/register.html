@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}Регистрация — MiniBlog{% endblock %}
+{% block content %}
+<div class="form-page form-page--narrow">
+  <h1>Регистрация</h1>
+  <form method="POST">
+    <div class="form-group">
+      <label for="username">Имя пользователя</label>
+      <input type="text" id="username" name="username" required autofocus maxlength="80"/>
+    </div>
+    <div class="form-group">
+      <label for="password">Пароль <small>(минимум 6 символов)</small></label>
+      <input type="password" id="password" name="password" required minlength="6"/>
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">Создать аккаунт</button>
+  </form>
+  <p class="auth-switch">Уже есть аккаунт? <a href="{{ url_for('login') }}">Войдите</a></p>
+</div>
+{% endblock %}

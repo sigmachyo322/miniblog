@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}Войти — MiniBlog{% endblock %}
+{% block content %}
+<div class="form-page form-page--narrow">
+  <h1>Войти</h1>
+  <form method="POST">
+    <div class="form-group">
+      <label for="username">Имя пользователя</label>
+      <input type="text" id="username" name="username" required autofocus/>
+    </div>
+    <div class="form-group">
+      <label for="password">Пароль</label>
+      <input type="password" id="password" name="password" required/>
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">Войти</button>
+  </form>
+  <p class="auth-switch">Нет аккаунта? <a href="{{ url_for('register') }}">Зарегистрируйтесь</a></p>
+</div>
+{% endblock %}
